@@ -1,0 +1,128 @@
+# server config
+host: localhost
+port: 8125
+baseurl: ''
+url: "https://lkhdp.com"
+
+# pages config
+title: 柯宏博客
+SEOTitle: 柯宏 | 博客
+description: ""
+keywords: "柯宏, 柯宏博客, 柯宏的博客, 博客, 个人网站, 互联网, lkhdp.com, https://lkhdp.com, Web, Java, JavaScript, 前端, 后端"
+favicon: /assets/favicon.ico
+
+# User config
+author:
+  name: lkh
+  email: kehongdp@gmail.com
+#  weibo: ""
+#  zhihu: ''
+#  github: https://github.com/kehongdp
+#  fackbook: ""
+#  twitter: ""
+#repository: kehongdp/kehongdp.github.io
+#github_url: https://github.com/kehongdp
+#github_username: kehongdp
+
+# SNS config
+RSS: false
+weibo_username: kehongdp
+# zhihu_username: kehongdp
+github_username: kehongdp
+# twitter_username: kehongdp
+# facebook_username: kehongdp
+
+
+# sidebar config
+sidebar:
+  open: true
+  avatar: /assets/images/avatar.jpg
+  des: "知识就是力量。"
+
+# Featured Tags config
+featured:
+  open: true
+  size: 1
+
+# Navigation config
+navs:
+  -
+    href: /
+    label: Home
+  -
+    href: /kehongdp/
+    label: kehongdp
+  -
+    href: /about/
+    label: About
+
+# Friends config
+friends: [
+  {
+    title: "乱序",
+    href: "http://mida.re/"
+  },{
+    title: "Sherry Wu",
+    href: "https://xuechundesign.github.io"
+  }
+]
+
+
+# Disqus config 评论配置
+# disqus:
+#   enable: true
+#   shortname: your-name
+#   count: true
+  # hide comments (visitors need to click to load the comments)
+  # count need to be false when hide is true
+#  hide: false
+
+# Pagination config
+permalink: pretty # 固定链接 /:year-:month-:day/:title/
+paginate: 10
+paginate_path: 'page:num'
+
+# Markdown config
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+  enable_coderay: true
+  syntax_highlighter: rouge
+
+# Build settings
+# theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-gist
+  - rouge
+  - kramdown
+#  - jekyll-geo-pattern
+#  - jekyll-github-metadata
+
+# Sass config
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Assets
+assets:
+  common: /assets/common/
+  css: /assets/css/
+  js: /assets/js/
+  images: /assets/images/
+
+# Analytics config
+analytics:
+  baidu_track_id: ""
+  google_track_id: 'G-Y5LDK3ZJQG'
+  google_domain: lkhdp.com
+
+# Theme version
+version: 0.0.1

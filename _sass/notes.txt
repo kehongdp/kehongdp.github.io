@@ -1,0 +1,216 @@
+常用的 css 命名规则：
+服务：service
+登录条：loginbar
+登录：login / entry
+注册：register / regist
+保存：save
+提交：submit
+状态：status
+商标：barnding
+-------------------------------------------------------
+会员：member
+付费会员：member--premium
+免费会员：member--free
+用户：user
+用户中心：ucenter
+用户名：uname
+密码：password / upwd
+昵称：nickname
+手机：mobilephone / mobile
+电话：telephone / tel
+
+头像：avatar
+默认头像：avatar--default
+-------------------------------------------------------
+头：header
+标志：logo / sign / mark
+广告：banner / advertisement / ad
+
+导航：nav / navigation
+子导航：subnav
+主导航：nav__main
+顶部导航：nav__top
+
+侧栏：sidebar / side
+边导航：sidebar
+左导航：sidebar__left
+右导航：sidebar__right
+面包屑导航：breadcrumb
+
+
+菜单：menu
+子菜单：submenu
+下拉菜单：dropdown
+时序菜单：scrubber
+-------------------------------------------------------
+内容：content / container
+容器：container / pack
+包：wrap / package
+栏目：column
+页面外围控制整体布局宽度：wrapper
+左右中：left right center
+
+-------------------------------------------------------
+页脚：footer
+
+加入：join
+联系：contact
+指南：guide
+摘要：summary
+时间：time
+商标：brand
+下载：download
+分享：share
+喜欢：like
+注释：note
+推广：promotion
+博客：blog
+论坛：forum
+公告：announcement
+版权：copyright
+
+合作伙伴：partner
+友情链接：friendlink / flink
+联系我们：contactus
+加入我们：joinus
+网站地图：sitemap
+网站信息：siteinfo
+
+版权声明：copyright-clarify
+法律声明：legal-statement
+免责声明：disclaimer
+
+视口：viewport
+-------------------------------------------------------
+标签：tag
+标签页：tab
+列表：list
+项目：item
+皮肤：skin
+
+文章：article
+新闻：news
+热点：hot / hotspot
+投票：vote
+滚动：scroll
+
+对话框：dialog
+小技巧：tips
+描述：description / desc
+信息：information / info /message
+消息/留言：message / msg
+提示：msg / tips / prompt
+
+标题：title
+图片：image / pic /img
+文字：text / txt
+按钮：button / btn
+图标：icon
+文本框：textbox / input
+多行文本框：textarea
+验证码：captcha / verification code
+缩略图：screenshot
+常见问题：faqs
+
+表格：table
+行：row
+列：column
+间隔：gutter
+
+
+导航菜单：nav-menu
+轮播图：carousel
+模式视图：modal
+按钮：btn
+下拉菜单：dropdown-menu
+分页导航：pagination
+工具提示：tooltips
+分享工具：share
+提示窗口：alert
+进度条：progress-bar
+用户头像：avtar
+卡片：card
+面板：panel
+图片：img
+-------------------------------------------------------
+搜索：search
+搜索条：search__bar
+搜索框：search__txt
+搜索词：search__key
+搜索按钮：search__btn
+搜索结果：search__results
+-------------------------------------------------------
+当前：current
+挑选：selected
+禁用：disabled
+勾选：checked
+
+悬停：hover
+得到焦点：focus
+失去焦点：blur
+活跃的/有效的：active
+
+默认：default
+主：primary
+正常：normal
+成功：success
+错误：error
+警告：warning
+
+单元：cell
+顶部：top
+
+大：large / big
+中：middle / medium
+小：small
+-------------------------------------------------------
+关键词：keyword
+产品：products
+产品价格：products-prices
+产品描述：products-description
+产品评论：products-review
+评论：review
+编辑评论：editor-review
+
+最新产品：news-products
+生产商：publisher
+-------------------------------------------------------
+充值：pay
+信誉：reputation
+购物车：cart / shop cart
+价格：price
+原价：original price / old price / Initial price
+现价/最新价：new price / now price / last price
+折扣：discount
+推荐：recommend / petite
+-------------------------------------------------------
+transition 动画
+shadow 阴影
+fade 淡入淡出
+flip 翻页效
+slide 滑动
+slideup 上滑动
+slidedown 下滑动
+turn 翻页
+horizontal 水平
+vertical 垂直
+collapsible 折叠
+corners 拐角
+flow 流
+reverse 反向
+pop 弹窗
+count 总数/计数
+plus 加号/正
+minus 减号/负
+controlgroup 控制组
+-------------------------------------------------------
+主要的 master.css
+模块 module.css
+基本共用 base.css
+布局，版面 layout.css
+主题 themes.css
+专栏 columns.css
+文字 font.css
+表单 forms.css
+补丁 mend.css
+打印 print.css

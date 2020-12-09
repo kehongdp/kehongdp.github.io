@@ -1,0 +1,11 @@
+<header class="g-pos-r g-clearfix g-fw-8 g-fs-18 g-header">
+  <a href="/" class="g-fl-l g-d-ib g-header-line g-header-home white-color">{{ site.title }}</a>
+
+  <i class="fa fa-bars hoverhands g-header-fa-bars" aria-hidden="true"></i>
+
+  <nav class="g-fl-r g-d-ib g-header-navbars">
+    {% for item in site.navs %}
+    <a href="{{ site.url }}{{ item.href }}" class="g-d-ib g-txt-ac g-header-line g-navbar-item white-color" title="{{ item.label }}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+</header>

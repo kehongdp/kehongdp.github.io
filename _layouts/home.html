@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<section class="g-mg-auto container g-clearfix">
+  <section class="g-box-b pages-content">
+    <ul class="">
+      {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <p>{{ post.excerpt }}</p>
+        <p><span>{{ post.date }}</span> <span>{{ post.tags }}</span></p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if site.sidebar.open %}
+  <section class="g-box-b sidebar">
+    <!-- Featured Tags -->
+    {% if site.featured.open %}
+    <div class="sidebar-line sidebar-tags">
+      <a href="" class="sidebar-title">FEATURED TAGS</a>
+      {% for tag in site.tags %}
+      <a href="{{ site.baseurl }}/pages/tags/?tag={{ tag[0] | url_encode }}" class="u-tags-btn" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ABOUT ME -->
+    <div class="sidebar-line sidebar-about">
+      <a href="" class="sidebar-title">ABOUT ME</a>
+      <img src="{{ site.sidebar.avatar }}" alt="" class="about-img">
+      <p class="about-des">{{ site.sidebar.des }}</p>
+    </div>
+
+    <!-- FRIENDS -->
+    {% if site.friends %}
+    <div class="sidebar-line sidebar-friends">
+      <h4 class="sidebar-title-ex">FRIENDS</h4>
+      {% for friend in site.friends %}
+        <a href="{{ friend.href }}" class="friends-line g-box-b">{{ friend.title }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+</section>

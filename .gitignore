@@ -1,0 +1,14 @@
+node_modules
+package-lock.json
+
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.git
+.idea
+
+_drafts
+_data
+_site
+
+_config.yml

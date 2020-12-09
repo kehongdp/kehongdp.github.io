@@ -1,0 +1,42 @@
+.g-header {
+  width: 100%;
+  height: 417px;
+  background-image: linear-gradient(135deg, #17aeff, #36b9fe, #3ab6fe);
+
+  &-line {
+    padding: 6px 10px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+  &-line:hover {
+    color: #834fc5;
+    opacity: .85;
+  }
+
+  &-home {
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+
+  &-navbars {
+    margin-top: 10px;
+    margin-right: 15px;
+    .g-navbar-item {
+    }
+  }
+
+  .fa-bars {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+  }
+  .fa-bars:hover {
+    color: #834fc5;
+    opacity: .85;
+  }
+}
+

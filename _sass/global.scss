@@ -1,0 +1,85 @@
+@import "base";
+
+html, body {
+  min-width: 320px;
+}
+
+.g-pos-r { position: relative; z-index: 9;}
+.g-pos-a { position: absolute; z-index: 9;}
+.g-pos-f { position: fixed; z-index: 9;}
+.g-pos-s { position: static; z-index: 9;}
+
+.g-fl-l { float: left;}
+.g-fl-r { float: right;}
+
+.g-clear { overflow: auto; *zoom: 1;}
+.g-clearfix { zoom: 1;}
+.g-clearfix:after{
+  content: '';
+  clear: both;
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.g-d-i { display: inline;}
+.g-d-ib { display: inline-block;}
+.g-d-b { display: block;}
+.g-d-n { display: none;}
+
+.g-box-b { box-sizing: border-box;}
+.g-box-c { box-sizing: content-box;}
+
+.g-mg-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.g-w-per { width: $percentage-base;}
+.g-h-per { height: $percentage-base;}
+.g-col-2 { width: $percentage-base / 2;}
+.g-col-3 { width: $percentage-base / 3;}
+.g-col-4 { width: $percentage-base / 4;}
+.g-col-5 { width: $percentage-base / 5;}
+.g-col-6 { width: $percentage-base / 6;}
+.g-col-8 { width: $percentage-base / 8;}
+.g-col-10 { width: $percentage-base / 10;}
+
+.g-col-2 { height: $percentage-base / 2;}
+.g-row-3 { height: $percentage-base / 3;}
+.g-row-4 { height: $percentage-base / 4;}
+.g-row-5 { height: $percentage-base / 5;}
+.g-row-6 { height: $percentage-base / 6;}
+.g-row-8 { height: $percentage-base / 8;}
+.g-row-10 { width: $percentage-base / 10;}
+
+.g-fs-12 { font-size: $font-size-base * 1.2;}
+.g-fs-14 { font-size: $font-size-base * 1.4;}
+.g-fs-16 { font-size: $font-size-base * 1.6;}
+.g-fs-18 { font-size: $font-size-base * 1.8;}
+.g-fs-20 { font-size: $font-size-base * 2;}
+.g-fs-22 { font-size: $font-size-base * 2.2;}
+.g-fs-24 { font-size: $font-size-base * 2.4;}
+.g-fs-26 { font-size: $font-size-base * 2.6;}
+.g-fs-28 { font-size: $font-size-base * 2.8;}
+.g-fs-30 { font-size: $font-size-base * 3;}
+.g-fs-36 { font-size: $font-size-base * 3.6;}
+
+.g-fw-n { font-weight: normal;}
+.g-fw-1 { font-weight: 100;}
+.g-fw-2 { font-weight: 200;}
+.g-fw-3 { font-weight: 300;}
+.g-fw-4 { font-weight: 400;}
+.g-fw-5 { font-weight: 500;}
+.g-fw-6 { font-weight: 600;}
+.g-fw-7 { font-weight: 700;}
+.g-fw-8 { font-weight: 800;}
+.g-fw-9 { font-weight: 900;}
+.g-fw-b { font-weight: bold;}
+
+.g-txt-al { text-align: left;}
+.g-txt-ac { text-align: center;}
+.g-txt-ar { text-align: right;}
+.g-txt-i { text-indent: 2em;}

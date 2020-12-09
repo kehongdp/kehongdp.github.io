@@ -1,0 +1,149 @@
+# BEM 命名
+block：模块，名字单词间用 - 连接
+element：元素，模块的子元素，以 __ 与 block 连接
+modifier：修饰，模块的变体，定义特殊模块，以 -- 与 block 连接
+
+# BEM + 命名空间
+命名空间定义 block 间的关系，这种方式网站上还没有大范围使用，最常见的如 .js－ 表示定义 JavaScript 钩子，不用于定义样式。常见命名空间：
+
+is- / has-：表示一种状态或条件样式。如 .is-active
+_：表示一个 hack，如 ._important
+js- / j：表示一个 JavaScript 钩子。如 .js-modal
+qa-：表示测试钩子
+
+o-：表示一个对象（Object），如 .o-layout。
+c-：表示一个组件（Component），指一个具体的、特定实现的 UI。如 .c-avatar。
+u-：表示一个通用工具（Utility），如 .u-hidden。
+t-：表示一个主题（Theme），如 .t-light。
+s-：表示一个上下文或作用域（Scope），如 .s-cms-content。
+
+布局(g-) 例如头部，尾部，主体，侧栏等
+模块(m-) 较大整体，如登录注册，搜索等
+元件(u-) 不可再分个体，例如按钮，input框等
+功能(f-) 使用频率较高样式，例如清除浮动
+皮肤(sk-) 例如文字色，背景色，边框色等
+状态(st-) 例如hover，选中等
+
+
+# CSS attribute order
+
+# Formatting Model
+position z-index visibility clip float clear display table-layout
+
+# Box Model
+border margin padding width height outline overflow
+
+# Typographic
+font line-height text vertical-align letter-spacing word-spacing white-space direction
+
+# Visual
+background color opacity cursor
+
+# Content
+content list-style quotes
+
+# Other
+animation transition transform mask masker
+
+    ┌── 布局定位
+    |   ├── 元素定位
+    |   |   └── position...
+    |   └── 元素浮动
+    |       └── float...
+    |—— 盒子模型
+    |   ├── 盒子类型
+    |   |   ├── display
+    |   |   ├── 弹性盒子
+    |   |   |   └── flex...
+    |   |   ├── 网格系统
+    |   |   |   └── grid...
+    |   |   ├── 表格模型
+    |   |   |   └── table-layout...
+    |   |   ├── 列表盒子
+    |   |   |   └── list-style...
+    |   |   └── 标注模型
+    |   |       └── ruby-align...
+    |   ├── 盒子属性
+    |   |   ├── box-sizing
+    |   |   ├── 盒子尺寸
+    |   |   |   ├── width...
+    |   |   |   ├── height...
+    |   |   |   ├── padding...
+    |   |   |   ├── border...
+    |   |   |   ├── outline...
+    |   |   |   └── margin...
+    |   |   └── 盒子样式
+    |   |       ├── color
+    |   |       ├── background...
+    |   |       ├── background-blend-mode...
+    |   |       ├── clip-path
+    |   |       ├── mask...
+    |   |       ├── filter
+    |   |       ├── box-shadow
+    |   |       ├── opacity
+    |   |       └── visibility
+    |   └── 盒子内容
+    |       ├── 溢出处理
+    |       |   └── overflow...
+    |       ├── 垂直对齐
+    |       |   └── vertical-align
+    |       ├── 内容分列
+    |       |   └── columns...
+    |       ├── 文本渲染
+    |       |   ├── 排版模式
+    |       |   |   └── writing-mode...
+    |       |   ├── 文本样式
+    |       |   |   ├── text-rendering
+    |       |   |   ├── font-feature-settings...
+    |       |   |   └── font...
+    |       |   ├── 文本控制
+    |       |   |   ├── text-overflow
+    |       |   |   ├── white-space
+    |       |   |   ├── overflow-wrap...
+    |       |   |   ├── word-break...
+    |       |   |   ├── text-align...
+    |       |   |   ├── font-synthesis
+    |       |   |   ├── font-size-adjust
+    |       |   |   ├── letter-spacing...
+    |       |   |   └── text-transform...
+    |       |   └── 文本装饰
+    |       |       ├── quotes
+    |       |       ├── tab-size
+    |       |       ├── text-indent
+    |       |       ├── text-emphasis...
+    |       |       ├── text-decoration...
+    |       |       └── text-shadow
+    |       └── 图片元素
+    |           ├── image-rendering...
+    |           └── shape-image-threshold...
+    |—— 盒子变形
+    |   ├── transform-style...
+    |   ├── perspective...
+    |   └── backface-visibility
+    |—— 动态效果
+    |   ├── 过渡动画
+    |   |   ├── transition...
+    |   |   └── animation...
+    |   └── 滚动效果
+    |       └── scroll-behavior...
+    └── 其他属性
+        ├── 用户行为
+        |   ├── resize
+        |   ├── cursorresize...
+        |   ├── touch-action
+        |   ├── caret-color
+        |   └── ime-mode
+        ├── 元素属性
+        |   └── object-fit
+        |   ├── object-position
+        |   ├── content
+        |   ├── counter-reset...
+        |   ├── will-change
+        |   ├── pointer-events
+        |   ├── z-index
+        |   └── all
+        ├── 定义变量
+        |   └── --*
+        └── 页面打印
+            ├── page-break-before...
+            └── widows

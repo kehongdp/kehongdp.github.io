@@ -1,0 +1,36 @@
+{% if site.sidebar.open %}
+<section class="home-sidebar">
+  <!-- Featured Tags -->
+  {% if site.featured.open %}
+  <div class="home-sidebar-item home-sidebar-tags lkh-clear">
+    <a href="{{ site.baseurl }}/archives/" class="home-sidebar-title">FEATURED TAGS</a>
+
+    {% capture tags %}
+      {% for tag in site.tags %}
+        <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}" data-encode="{{ tag[0] | strip | url_encode }}" title="{{ tag[0] }}" size="{{ tag[1].size }}" class="home-sidebar-btn" href="{{ site.baseurl }}/archives/?tag={{ tag[0] }}" >
+          {{ tag[0] }}
+        </a>__|__
+      {% endfor %}
+    {% endcapture %}
+    {{ tags | split:'__|__' | sort }}
+  </div>
+  {% endif %}
+
+  <!-- ABOUT ME -->
+  <div class="home-sidebar-item home-sidebar-about">
+    <h4 class="home-sidebar-title">ABOUT ME</h4>
+    <img src="{{ site.sidebar.avatar }}" alt="" class="home-sidebar-img">
+    <p class="home-sidebar-des">{{ site.sidebar.des }}</p>
+  </div>
+
+  <!-- FRIENDS -->
+  {% if site.friends %}
+  <div class="home-sidebar-item home-sidebar-friends">
+    <h4 class="home-sidebar-title">FRIENDS</h4>
+    {% for friend in site.friends %}
+      <a href="{{ friend.href }}" class="home-sidebar-friends-link">{{ friend.title }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endif %}

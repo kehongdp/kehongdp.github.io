@@ -2,47 +2,31 @@
 layout: default
 ---
 
-<section class="g-mg-auto container g-clearfix">
-  <section class="g-box-b pages-content">
-    <ul class="">
-      {% for post in site.posts %}
-        <li>
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
-        <p><span>{{ post.date }}</span> <span>{{ post.tags }}</span></p>
+<section class="container home-container lkh-clear">
+  <section class="home-content">
+    <ul class="home-articles">
+      {% for page in paginator.posts %}
+        <li class="home-articles-item">
+          <a href="{{ page.url | prepend: site.baseurl }}" class="home-articles-title">{{ page.title }}</a>
+          <p class="home-articles-introduction">{{ page.content | strip_html | truncate:300 }}</p>
+
+          <p class="home-articles-info home-articles-if">
+            <span class="home-articles-info-time">{{ page.date | remove: ' +0800' }}</span>|
+            {% for tag in page.tags %}
+              <span class="home-articles-info-tags">{{ tag }}</span>
+            {% endfor %}
+          </p>
+
+          <p class="home-articles-info home-articles-else">{{ page.date | remove: ' +0800' }}</p>
+          <p class="home-articles-info home-articles-else">{% for tag in page.tags %} {{ tag }} {% endfor %}</p>
         </li>
       {% endfor %}
     </ul>
+
+    <!-- 分页 -->
+    {% include pagination.html %}
   </section>
 
-  {% if site.sidebar.open %}
-  <section class="g-box-b sidebar">
-    <!-- Featured Tags -->
-    {% if site.featured.open %}
-    <div class="sidebar-line sidebar-tags">
-      <a href="" class="sidebar-title">FEATURED TAGS</a>
-      {% for tag in site.tags %}
-      <a href="{{ site.baseurl }}/pages/tags/?tag={{ tag[0] | url_encode }}" class="u-tags-btn" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    <!-- ABOUT ME -->
-    <div class="sidebar-line sidebar-about">
-      <a href="" class="sidebar-title">ABOUT ME</a>
-      <img src="{{ site.sidebar.avatar }}" alt="" class="about-img">
-      <p class="about-des">{{ site.sidebar.des }}</p>
-    </div>
-
-    <!-- FRIENDS -->
-    {% if site.friends %}
-    <div class="sidebar-line sidebar-friends">
-      <h4 class="sidebar-title-ex">FRIENDS</h4>
-      {% for friend in site.friends %}
-        <a href="{{ friend.href }}" class="friends-line g-box-b">{{ friend.title }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </section>
-  {% endif %}
+  <!-- 侧边栏 -->
+  {% include sidebar.html %}
 </section>

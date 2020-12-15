@@ -13,6 +13,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
@@ -25,8 +26,8 @@ time, mark, audio, video {
 html,
 body {
   font-family: "-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif";
-  font-size: 12px;
-  line-height: 1.36;
+  font-size: 14px;
+  line-height: 1.428;
   background-color: #fff;
   user-select: none;
   color: #222;
@@ -55,10 +56,6 @@ summary {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
-
-figure {
-  margin: 1em 40px;
 }
 
 ol, ul, dd {

@@ -1,28 +1,24 @@
 # server config
 host: localhost
-port: 8125
+port: 8225
 baseurl: ''
-url: "https://lkhdp.com"
+url: 'https://lkhdp.com'
 
 # pages config
-title: 柯宏博客
-SEOTitle: 柯宏 | 博客
-description: ""
-keywords: "柯宏, 柯宏博客, 柯宏的博客, 博客, 个人网站, 互联网, lkhdp.com, https://lkhdp.com, Web, Java, JavaScript, 前端, 后端"
+title: 莫惹路人甲
+SEOTitle: 莫惹路人甲
+description: '莫惹路人甲、 柯宏的博客、 一起进步，提升技术'
+keywords: '莫惹路人甲、 柯宏、 柯宏博客、 柯宏 | 博客、 柯宏的博客、 博客、 个人网站、 互联网、 lkhdp.com、 https://lkhdp.com、 Web、 Java、 JavaScript、 前端、 后端'
 favicon: /assets/favicon.ico
+copyright: 京ICP备20023926号
 
 # User config
 author:
   name: lkh
   email: kehongdp@gmail.com
-#  weibo: ""
-#  zhihu: ''
-#  github: https://github.com/kehongdp
-#  fackbook: ""
-#  twitter: ""
-#repository: kehongdp/kehongdp.github.io
-#github_url: https://github.com/kehongdp
-#github_username: kehongdp
+  github: https://github.com/kehongdp
+  weibo: ''
+  zhihu: ''
 
 # SNS config
 RSS: false
@@ -32,55 +28,78 @@ github_username: kehongdp
 # twitter_username: kehongdp
 # facebook_username: kehongdp
 
+# Navigation config
+navs:
+  -
+    href: /
+    label: Home
+    title: 首页
+  -
+    href: /archives/
+    label: Archives
+    title: 所有文章
+  -
+    href: /about/
+    label: About
+    title: 关于我
 
 # sidebar config
 sidebar:
   open: true
   avatar: /assets/images/avatar.jpg
-  des: "知识就是力量。"
+  des: 知识就是力量。
 
 # Featured Tags config
 featured:
   open: true
   size: 1
 
-# Navigation config
-navs:
-  -
-    href: /
-    label: Home
-  -
-    href: /kehongdp/
-    label: kehongdp
-  -
-    href: /about/
-    label: About
+featured-tags: true
+featured-condition-size: 1
+recommend-tags: true
+recommend-condition-size: 2
+
 
 # Friends config
 friends: [
   {
-    title: "乱序",
-    href: "http://mida.re/"
+    title: '',
+    href: ''
   },{
-    title: "Sherry Wu",
-    href: "https://xuechundesign.github.io"
+    title: '',
+    href: ''
   }
 ]
 
-
-# Disqus config 评论配置
-# disqus:
-#   enable: true
-#   shortname: your-name
-#   count: true
-  # hide comments (visitors need to click to load the comments)
-  # count need to be false when hide is true
-#  hide: false
+# Search config
+search: true
 
 # Pagination config
-permalink: pretty # 固定链接 /:year-:month-:day/:title/
-paginate: 10
+permalink: /:year-:month-:day/:title/
+#permalink: /:year-:month-:day/:title/
+#permalink: pretty
+paginate: 7
 paginate_path: 'page:num'
+
+# Sass config
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Assets config
+assets:
+  common: /assets/common/
+  css: /assets/css/
+  js: /assets/js/
+  images: /assets/images/
+
+# Analytics config
+analytics:
+  baidu_track_id: ''
+  google_track_id: G-8Q3VSEL7JN
+
+# Theme version
+version: 0.0.1
 
 # Markdown config
 markdown: kramdown
@@ -103,26 +122,15 @@ plugins:
   - jekyll-gist
   - rouge
   - kramdown
+
 #  - jekyll-geo-pattern
 #  - jekyll-github-metadata
 
-# Sass config
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Assets
-assets:
-  common: /assets/common/
-  css: /assets/css/
-  js: /assets/js/
-  images: /assets/images/
-
-# Analytics config
-analytics:
-  baidu_track_id: ""
-  google_track_id: 'G-Y5LDK3ZJQG'
-  google_domain: lkhdp.com
-
-# Theme version
-version: 0.0.1
+# Disqus config 评论配置
+# disqus:
+#   enable: true
+#   shortname: your-name
+#   count: true
+  # hide comments (visitors need to click to load the comments)
+  # count need to be false when hide is true
+#  hide: false

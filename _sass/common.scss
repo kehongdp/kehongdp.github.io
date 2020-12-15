@@ -2,104 +2,13 @@
 
 @import "global";
 
+@import "theme";
+
 @import "forms";
 @import "button";
 
-@import "utility";
-
-
 @import "media";
-@import "header";
-@import "footer";
 
-.container {
-  width: 960px;
-}
-
-.pages-content {
-  float: left;
-  width: 75%;
-}
-
-.sidebar {
-  float: right;
-  width: 25%;
-  padding-left: 15px;
-  padding-right: 15px;
-
-  &-line {
-    padding-top: 5px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #efefef;
-  }
-  &-line:last-child {
-    border: none;
-  }
-
-  &-title-ex,
-  &-title {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #a7a7a7;
-  }
-
-  .about-img {
-    display: block;
-    border-radius: 5px;
-    width: 80%;
-  }
-
-  .about-des {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    font-size: 14px;
-    color: #a9a4a4;
-  }
-
-  .friends-line {
-    padding: 3px 6px;
-    color: #a9a4a4;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &-title:hover,
-  .friends-line:hover {
-    color: $theme-color-base;
-  }
-}
-
-.u-tags-btn {
-  display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 7px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 3px;
-  border: 1px solid #bfbfbf;
-  font-size: 12px;
-  line-height: 24px;
-  color: #a9a4a4;
-
-  &:hover {
-    color: $theme-color-base;
-    border-color: $theme-color-base;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
+@import "home.scss";
+@import "article.scss";
 

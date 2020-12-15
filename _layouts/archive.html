@@ -1,0 +1,55 @@
+---
+layout: default
+title: Archives
+description: 
+header-img: ""
+---
+
+<section class="container tags-container lkh-clear">
+  <section class="tags-content">
+    <!-- Tags List -->
+    <section class="tags-list lkh-clear">
+      <a class="tags-list-button tags-list-button-all" data-encode="">Show All<sup>{{site.posts.size}}</sup></a>
+
+      {% capture tags %}
+        {% for tag in site.tags %}
+          <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}" data-encode="{{ tag[0] }}" title="{{ tag[0] }}" size="{{ tag[1].size }}" class="tags-list-button">
+            {{ tag[0] }}
+            <sup>{{tag[1].size}}</sup>
+          </a>__|__
+        {% endfor %}
+      {% endcapture %}
+      {{ tags | split:'__|__' | sort }}
+    </section>
+
+    <!-- Article List -->
+   <section class="result-archives">
+      {%- for article in site.posts -%}
+        {%- assign _tags = '' -%}
+        {%- for _tag in article.tags -%}
+          {%- assign _tag_encode = _tag | strip -%}
+          {%- if forloop.last -%}
+            {%- assign _tags = _tags | append: _tag_encode -%}
+          {%- else -%}
+            {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {% comment %} group by year {% endcomment %}
+        {%- assign _currentdate = article.date | date: '%Y' -%}
+
+        {%- if _currentdate != _date -%}
+          {%- unless forloop.first -%}
+            </div>
+          {%- endunless -%}
+          <div class="result-archives-item">
+            <h2 class="result-archives-item-year">{{ _currentdate }}</h2>
+            {%- assign _date = _currentdate -%}
+        {%- endif -%}
+            <a href="{{ article.url | prepend: site.baseurl }}" data-tags="{{ _tags }}" class="result-archives-item-link">{{ article.title }}</a>
+        {%- if forloop.last -%}
+          </div>
+        {%- endif -%}
+      {% endfor %}
+    </section>
+  </section>
+</section>

@@ -5,14 +5,21 @@
   <meta http-equiv="Expires" content="0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
   <meta name="renderer" content="webkit">
+
   <meta name="author" content="{{ site.author.name }}">
   <meta name="keywords" content="{{ site.keywords }}">
   <meta name="description" content="{{ site.description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+  
   <link rel="icon" href="{{ site.favicon }}" type=”image/x-icon”>
   <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.assets.css }}common.css?{{ site.version }}">
 </head>

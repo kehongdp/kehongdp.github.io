@@ -1,0 +1,136 @@
+---
+layout: page
+title:  "Java File文件类总结，看这一篇就够了"
+date:   2020-12-14 21:20:13
+tags:
+    - Java
+    - I/O
+---
+
+
+> java.io.File类提供一个抽象的、与系统独立的路径表示。给它一个路径字符串，它会将其转换为与系统无关的抽象路径表示，这个路径可以指向一个文件、目录或是URI(Uniform Resource Identifier)。
+
+
+# File类
+## 构造方法
+public File(String parent，String child): 从父路径字符串和子路路径字符串来创建新的File实例
+{% highlight Java %}
+String parentpath = new String("D:\\a.text");
+String childpath = new String("a.text");
+File file = new File(parentpath,childpath);
+
+public File(String name): 根据路径字符串来创建新的File实例
+File file = new File("D:\\a.text");
+{% endhighlight %}
+
+## 创建方法 (prefix是文件名前缀，suffix是文件名后缀，一般是扩展名)
+
+>* createNewFile(File dirName, String name): 在指定位置创建一个空文件，成功就返回true，如果已存在，然后返回false
+>* createTempFile(String prefix, String suffix): 在OS的临时文件夹中创建一个临时文件
+>* createTempFile(String prefix, String suffix, File directory): 在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称
+
+>* renameTo(File dest)如果目标文件与源文件是在同一个路径下，那么renameTo的作用是重命名， 如果目标文件与源文件不是同一个路径下，那么renameTo的作用就是剪切，而且还不能操作文件夹
+
+>* mkdir(): 在指定位置创建一个单级文件夹，如果创建成功，则返回true
+>* mkdirs(): 在指定位置创建一个多级文件夹，如果创建成功，则返回true
+
+## 获取方法
+
+>* public String getAbsolutePath(): 返回此File对象所对应的绝对路径，与文件是否存在没关系
+>* public String getPath(): 返回文件的相对/绝对路径，但是目录要指定
+>* public String getParent(): 返回此File对象所对应的路径名；如果此路径名没有指定父目录，则返回null
+>* public String getName(): 返回File对象所表示的文件名或者目录名（若为目录，返回的是最后一级子目录）
+>* public long length(): 返回文件的大小(字节数)，如果文件不存在则返回0L，如果是文件夹也返回0L
+>* public long lastModified(): 返回该File对象最后修改的时间戳
+>* public boolean setLastModified(long time)：设置该File对象最后修改的时间戳
+
+>* public File getAbsoluteFile()：返回此File对象所对应的绝对路径
+>* public File getParentFile()：返回此File对象的父目录
+
+## 设置方法
+
+>* public boolean setReadOnly()：设置此File对象为只读权限。
+>* public boolean setWritable(boolean writable, boolean ownerOnly)：写权限设置，writable如果为true，允许写访问权限；如果为false，写访问权限是不允许的。ownerOnly如果为true，则写访问权限仅适用于所有者；否则它适用于所有人。
+>* public boolean setWritable(boolean writable)：底层实现是：通过setWritable(writable, true)实现，默认是仅适用于文件或目录所有者。
+>* public boolean setReadable(boolean readable, boolean ownerOnly)：读权限设置，readable如果为true，允许读访问权限；如果为false，读访问权限是不允许的。ownerOnly如果为true，则读访问权限仅适用于所有者；否则它适用于所有人。
+>* public boolean setReadable(boolean readable)：底层实现是：通过setReadable(readable, true)实现，默认是仅适用于文件或目录所有者。
+>* public boolean setExecutable(boolean executable, boolean ownerOnly)：执行权限设置，executable如果为true，允许执行访问权限；如果为false，执行访问权限是不允许的。ownerOnly如果为true，则执行访问权限仅适用于所有者；否则它适用于所有人。
+>* public boolean setExecutable(boolean executable)：底层实现是：通过setExecutable(executable, true)实现，默认是仅适用于文件或目录所有者。
+
+## 判断
+
+>* public boolean exists(): 判断文件或文件夹是否存在，如果不存在，则返回false
+>* public boolean isFile(): 判断此File是否为一个文件，如果不存在，则返回false
+>* public boolean isDirectory(): 判断是否是一个目录，如果不存在，则返回false
+>* public boolean isHidden(): 判断是否是一个隐藏的文件或是否是隐藏的目录
+>* public boolean isAbsolute(): 判断此File对象路径名是否为绝对路径名
+>* public boolean canRead()：判断此File对象所对应的文件或目录是否可读。
+>* public boolean canWrite()：判断此File对象所对应的文件或目录是否可写。
+>* public boolean canExecute()：判断此File对象所对应的文件或目录是否可执行。
+
+## 文件夹相关
+
+>* public static File[] listRoots()列出所有的根目录(Window中就是所有系统的盘符)
+>* public String[] list(): 返回目录下的文件或者目录名，包含隐藏文件对于文件这样操作会返回null
+>* public String[] list(FilenameFilter filter): 返回指定当前目录中符合过滤条件的子文件或子目录对于文件这样操作会返回null
+>* public File[] listFiles(): 返回目录下的文件或者目录对象(File类实例)，包含隐藏文件对于文件这样操作会返回null
+>* public File[] listFiles(FileFilter filter): 返回指定当前目录中符合过滤条件的子文件或子目录对于文件这样操作会返回null
+>* public File[] listFiles(FilenameFilter filter): 返回指定当前目录中符合过滤条件的子文件或子目录对于文件这样操作会返回null
+
+## 删除方法
+
+>* delete(): 删除文件或一个空文件夹，如果是文件夹且不为空，则不能删除，成功返回true，失败返回fals
+>* deleteOnExit(): jvm退出时删除文件或者文件夹，用于删除临时文件，无返回值 / 在虚拟机终止时，请求删除此抽象路径名表示的文件或目录，保证程序异常时创建的临时文件也可以被删除
+
+
+{% highlight Java %}
+System.out.println("获取绝对路径："+file.getAbsolutePath());
+System.out.println("获取相对路径："+file.getPath());
+System.out.println("获取构造路径名："+file.getParent());
+System.out.println("获取父目录路径："+file.getParentFile());
+System.out.println("获取文件名称："+file.getName());
+System.out.println("getCanonicalPath(): " + file.getCanonicalPath());
+System.out.println("getCanonicalFile(): " + file.getCanonicalFile());
+System.out.println("获取文件长度："+file.length());
+System.out.println("获取最后修改时间："+file.lastModified());
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+System.out.println(simpleDateFormat.format(file.lastModified()));
+{% endhighlight %}
+
+{% highlight Java %}
+System.out.println("文件是否存在："+file.exists());
+System.out.println("是否是一个文件："+file.isFile());
+System.out.println("是否是一个目录："+file.isDirectory());
+System.out.println("是否是一个隐藏文件："+file.isHidden());
+System.out.println("是否为绝对路径名："+file.isAbsolute());
+System.out.println("是否可读: " + file.canRead());
+System.out.println("是否可写入: " + file.canWrite());
+System.out.println("是否可执行: " + file.canExecute());
+{% endhighlight %}
+
+{% highlight Java %}
+File[] list = File.listRoots();
+for (File item : list){
+    System.out.println("所有的盘符分别是："+item);
+}
+
+System.out.println("===============================");
+File fileList = new File("D:\\DirectoryTest");
+String[] itemList = fileList.list();
+for (String item : itemList){
+    System.out.println("目录下的文件分别是："+item);
+}
+
+System.out.println("===============================");
+FilenameFilter filter = new MainFilenameFilter("jpg");
+String[] itemLists = fileList.list(filter);
+for (String item : itemLists){
+    System.out.println("目录下符合过滤条件的文件："+item);
+}
+
+System.out.println("===============================");
+File[] f = fileList.listFiles();
+for (File item : f){
+    System.out.println("目录下的文件分别是："+item.getPath());
+}
+{% endhighlight %}

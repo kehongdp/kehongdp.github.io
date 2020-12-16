@@ -11,18 +11,16 @@
 
 .tags-container,
 .articles-container {
+  position: relative;
   min-height: 350px;
 }
 
 .articles-content {
   float: left;
   padding: 25px 10px;
-  width: 75%;
-
-  &-tags {
-
-  }
-
+  width: 720px;
+}
+.articles-left-top {
   &-tag {
     margin-right: 5px;
     padding: 5px 15px;
@@ -52,21 +50,57 @@
   }
 
   &-info {
+    margin-top: 12px;
+    margin-bottom: 12px;
     font-size: 16px;
     line-height: 22px;
     color: #ccc;
   }
+}
 
-  & p {
-    margin-top: 12px;
+.articles-left-content {
+
+  & h1, h2, h3, h4 {
+    margin-top: 15px;
     margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 20px;
+    line-height: 1.57;
   }
 
-  & figure {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  & h1 {
+    font-size: 32px;
+  }
+
+  & h2 {
+    font-size: 24px;
+  }
+
+  & h3 {
+    font-size: 18px;
+  }
+
+  & h4 {
+    font-size: 16px;
+  }
+
+  & p {
+    font-size: 14px;
+    line-height: 1.57;
+  }
+  & ul {
+    margin-bottom: 3px;
+    padding-left: 20px;
+    list-style: disc;
+  }
+  & li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+
+  & blockquote {
+    border-left: 3px solid #000;
+    padding: 10px;
+    background-color: #efefef;
   }
 }
 
@@ -74,9 +108,38 @@
   background-image: url(/assets/images/header-articles.jpg);
 }
 
-.articles-container {
+.articles-right {
+  display: none;
+  float: right;
+  padding: 25px 10px;
+  width: 240px;
 
+  &-title {
+    margin-top: 200px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 1.57;
+  }
+
+  &-anchors {
+    padding-top: 10px;
+  }
+
+  &-anchor {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #404040;
+
+    &:hover {
+      color: $theme-color-base;
+    }
+  }
 }
+
+
 .tags-content {
   padding: 25px 10px;
 }
@@ -161,17 +224,22 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
   }
+
   .articles-container,
   .tasg-container {
     min-height: 530px;
   }
+
   .articles-content {
     float: none;
     width: 100%;
+  }
+
+  .articles-right {
+    display: none;
   }
 }

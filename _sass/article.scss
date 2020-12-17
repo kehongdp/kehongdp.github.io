@@ -5,8 +5,8 @@
   margin-right: auto;
   width: 960px;
 }
-.header-articles {
-  background-image: url(/assets/images/header-articles.jpg);
+.header {
+  //background-image: url(/assets/images/header-articles.jpg);
 }
 
 .tags-container,
@@ -102,10 +102,6 @@
     padding: 10px;
     background-color: #efefef;
   }
-}
-
-.header-articles {
-  background-image: url(/assets/images/header-articles.jpg);
 }
 
 .articles-right {
@@ -222,6 +218,11 @@
       display: none;
     }
   }
+}
+
+.error-img {
+  display: block;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

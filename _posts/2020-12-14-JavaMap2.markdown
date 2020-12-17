@@ -1,0 +1,154 @@
+---
+layout: page
+title:  "关于Java Map，你应该掌握N种方法"
+date:   2020-12-14 11:20:13 +0000
+tags:
+  - Java
+  - Map
+---
+
+
+## 初始化Map
+
+{% highlight Java %}
+HashMap<String, String> map = new HashMap<String, String>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+map.put("key3", "value3");
+map.put("key4", "value4");
+map.put("key5", "value5");
+map.put("key6", "value6");
+map.put("key10", "value10");
+map.put("key10", "value11");
+map.put("key11", "value11");
+{% endhighlight %}
+
+## 将Map转化为List
+
+{% highlight Java %}
+// 将 Map 转为 List
+List entryList = new ArrayList(map.entrySet());
+System.out.println(entryList);
+
+List entryList = new ArrayList(map.entrySet());
+System.out.println(entryListx);
+
+// 将 Map 中的 key 转为 List
+List keyList = new ArrayList(map.keySet());
+System.out.println(keyList);
+
+List<String> keyList = new ArrayList<>(map.keySet());
+System.out.println(keyList);
+
+// 将 Map 中的 value 转为 List
+List valueList = new ArrayList(map.values());
+System.out.println(valueList);
+
+List<String> valueList = new ArrayList<>(map.values());
+System.out.println(valueList);
+{% endhighlight %}
+
+## 遍历Map
+
+{% highlight Java %}
+for (HashMap.Entry<String, String> entry : map.entrySet()) {
+  System.out.println("entrySet: " + entry.getKey() + " - " + entry.getValue());
+}
+
+for (String key : map.keySet()) {
+  System.out.println("keySet(): " + key + " - " + map.get(key));
+}
+
+Iterator<String> iterator = map.keySet().iterator();
+while (iterator.hasNext()) {
+  String key = iterator.next();
+  System.out.println("keySet(): " + key + " - " + map.get(key));
+}
+
+Iterator<HashMap.Entry<String, String>> iterator = map.entrySet().iterator();
+while (iteratorx.hasNext()) {
+  HashMap.Entry<String, String> entry = iteratorx.next();
+  System.out.println("entrySet: " + entry.getKey() + " - " + entry.getValue());
+}
+{% endhighlight %}
+
+## 根据Map的keys进行排序
+
+{% highlight Java %}
+List<HashMap.Entry<String,String>> list = new ArrayList<>(map.entrySet());
+Collections.sort(list, (HashMap.Entry e1, HashMap.Entry e2)-> {
+  return e1.getKey().toString().compareTo(e2.getKey().toString());
+});
+for (HashMap.Entry entry : list) {
+  System.out.println("key:" + entry.getKey() + " value:" + entry.getValue());
+}
+
+SortedMap sortedMap = new TreeMap(new Comparator<String>() {
+  @Override
+  public int compare(String k1, String k2) {
+    return k1.compareTo(k2);
+  }
+});
+sortedMap.putAll(map);
+
+Iterator itr = sortedMap.entrySet().iterator();
+while(itr.hasNext()) {
+  HashMap.Entry entry = (HashMap.Entry) itr.next();
+  String key = (String) entry.getKey();
+  String value = (String) entry.getValue();
+  System.out.println("key:" + key + " value:" + value);
+}
+{% endhighlight %}
+
+## 根据Map的values进行排序
+
+{% highlight Java %}
+List <HashMap.Entry<String,String>> list = new ArrayList<>(map.entrySet());
+Collections.sort(list, (HashMap.Entry e1, HashMap.Entry e2)-> {
+    return e1.getValue().toString().compareTo(e2.getValue().toString());
+  }
+);
+
+for (HashMap.Entry entry : list) {
+  System.out.println("key:" + entry.getKey() + ",value:" + entry.getValue());
+}
+{% endhighlight %}
+
+## 创建一个空map
+
+{% highlight Java %}
+HashMap mapx = Collections.emptyMap();
+HashMap<String,String> map = Collections.<String, String>emptyMap();
+{% endhighlight %}
+
+## 初始化一个静态/不可变的Map
+
+{% highlight Java %}
+//private static final HashMap<Integer, String> map;
+Collections.unmodifiableMap(map);
+{% endhighlight %}
+
+## 关于Map拷贝
+
+{% highlight Java %}
+// 主要有 等号=、 clone、 putAll，属于浅拷贝
+HashMap<String, String> clonedMap = map;
+System.out.println(clonedMap);
+
+HashMap<String, String> map = new HashMap<String, String>();
+HashMap<String, String> clonedMap = (HashMap<String, String>) map.clone();
+System.out.println(clonedMap);
+
+// putAll() 深拷贝只适用于基本数据类型，不适用与引用类型
+HashMap<String, String> clonedMap = new HashMap<>();
+clonedMap.putAll(map);
+
+// 序列化的可以实现对象的深拷贝，但是对象必须实现Serializable接口
+// Map属于接口，不能实现Serializable接口，所以不能实现深拷贝
+// HashMap属于Map实现类，可以实现Serializable接口，因此可以实现深拷贝
+// Gson序列化HashMap，实现深度拷贝
+Gson gson = new Gson();
+String jsonString = gson.toJson(map);
+Type type = new TypeToken<HashMap<String, String>>(){}.getType();
+HashMap<String, String> clonedMapz = gson.fromJson(jsonString, type);
+{% endhighlight %}

@@ -1,5 +1,6 @@
 ---
 layout: default
+header-img: /assets/images/header-bg.jpg
 ---
 
 <section class="container home-container lkh-clear">
@@ -17,7 +18,7 @@ layout: default
             {% endfor %}
           </p>
 
-          <p class="home-articles-info home-articles-else">{{ page.date | remove: ' +0800' }}</p>
+          <p class="home-articles-info home-articles-else">{{ page.date | remove: ' +0000' }}</p>
           <p class="home-articles-info home-articles-else">{% for tag in page.tags %} {{ tag }} {% endfor %}</p>
         </li>
       {% endfor %}
